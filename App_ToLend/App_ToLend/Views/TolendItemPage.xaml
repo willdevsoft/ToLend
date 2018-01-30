@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App_ToLend.ViewModels"
+             x:Class="App_ToLend.Views.TolendItemPage"
+             Title="{Binding tolendItem.Name}">
+    <ContentPage.ToolbarItems
+        BackgroundColor="Blue">
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:TLItemViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Margin="20" VerticalOptions="StartAndExpand" BackgroundColor="White">
+        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Image Source="ic_Person_32.png"/>
+            <Entry Text="{Binding tolendItem.Name}"
+                   Placeholder="Saisir le nom"/>
+        </StackLayout>
+        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Image Source="ic_Edit_32.png"/>
+            <Entry Text="{Binding tolendItem.Notes}"
+               Placeholder="Saisir l'objet"/>
+        </StackLayout>
+        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Image Source="ic_Calendar_32.png"/>
+            <DatePicker MinimumDate="1/1/2017"
+                    MaximumDate="1/1/2030"
+                    DateSelected="DatePicker_DateSelected"/>
+        </StackLayout>
+        <Label Text="Done" />
+        <Switch IsToggled="{Binding Done}" />
+        <StackLayout Orientation="Horizontal">
+            <Button 
+                Image="ic_disk_save_48.png"
+                Command="{Binding SaveCommand}"
+                Clicked="OnSaveClicked"
+                BackgroundColor="Transparent"
+                BorderRadius="15" 
+                FontAttributes="Bold"
+                TextColor="White"
+                FontSize="Default"
+                HorizontalOptions="FillAndExpand"/>
+            <Button
+                Image="ic_Cancel_48.png"
+                BackgroundColor="Transparent"
+                BorderRadius="15" 
+                Clicked="OnCancelClicked"
+                FontAttributes="Bold"
+                TextColor="White"
+                FontSize="Default"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

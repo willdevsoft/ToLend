@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_ToLend.Views.MenuPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout
+                Orientation="Vertical">
+                <StackLayout >
+                    <Image Source="Fond1" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <Label Text="To Lend application" />
+                <Label Text="Menu" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Nouveau"
+                            Image ="ic_Pencil_32.png"
+                            BackgroundColor="Transparent"
+                            Clicked="NewItem_Clicked"
+                            HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Listes"
+                            Image="ic_Checklist_32.png"
+                            BackgroundColor="Transparent"
+                            Clicked="Archives_Clicked"
+                            HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            
+        </ContentPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

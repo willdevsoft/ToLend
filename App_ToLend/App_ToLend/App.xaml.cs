@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_ToLend.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,35 @@ namespace App_ToLend
 {
     public partial class App : Application
     {
+        static TolendItemDatabase database;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new App_ToLend.MainPage();
+            //database = new TolendItemDatabase("TodoSQLite.db3");
+            MainPage = new App_ToLend.Views.MenuPage();
         }
+
+
+ 
+        // TodoItemDatabase
+        public static TolendItemDatabase DB
+        {
+            get
+            {
+                if (database == null)
+                {
+                    //database = new TolendItemDatabase("TolendSQLite.db3");
+                    database = new TolendItemDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("DB_ToLend_SQLite.db3"));
+                }
+                return database;
+            }
+        }
+
+        public int ResumeAtTodoId { get; set; }
+
+    
 
         protected override void OnStart()
         {

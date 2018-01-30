@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_ToLend.Views.TolendListPage"
+             Title="To Lend"
+             Icon="ic_format_align_justify_black_24dp.png">
+    <!--Affichage d'un menu accessible depuis la toolbar-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_format_list_bulleted_black_24dp.png"
+                     Text="Nouveau"
+                     Priority="0"
+                     Order="Secondary"
+                     Clicked="New_Clicked"/>
+         <ToolbarItem Text="A propos"
+                     Priority="1"
+                     Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <!--Affichage de la listview à partir d'un modéle de donnée-->
+    <ListView x:Name="listView" Margin="20" 
+              HasUnevenRows="True"
+              ItemSelected="listView_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal">
+                            <Grid BackgroundColor="Purple"
+                                  Padding="10" >
+                            </Grid>
+                            <StackLayout Margin="15,0,0,0" Orientation="Vertical">
+                                <Label Text="{Binding Name}" FontSize="Default" TextColor="Black" />
+                                <Label Text="{Binding Notes}" FontSize="Default" TextColor="Gray" />
+                                <Label Text="{Binding DateSelected}" FontSize="Default" TextColor="Gray" />
+                            </StackLayout>
+                            <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <Button BackgroundColor="Transparent" BorderColor="Transparent" HorizontalOptions="End" IsVisible="True" Clicked="Remove_Clicked" Image="ic_deletetrash_32.png"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell.View>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
