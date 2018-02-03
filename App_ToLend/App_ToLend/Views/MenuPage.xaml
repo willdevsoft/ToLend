@@ -4,11 +4,9 @@
              x:Class="App_ToLend.Views.MenuPage">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            <StackLayout
+            <StackLayout  Spacing="0"
                 Orientation="Vertical">
-                <StackLayout >
-                    <Image Source="Fond1" HorizontalOptions="FillAndExpand"/>
-                </StackLayout>
+                <Image Source="Fond3" Aspect="Fill" />
                 <Label Text="To Lend application" />
                 <Label Text="Menu" />
                 <StackLayout Orientation="Horizontal">

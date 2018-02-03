@@ -46,6 +46,8 @@ namespace App_ToLend.Views
         async void Button_Cancel(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TolendListPage());
+
+
         }
     }
 }

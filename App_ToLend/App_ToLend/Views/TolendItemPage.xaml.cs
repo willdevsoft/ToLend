@@ -17,9 +17,11 @@ namespace App_ToLend.Views
     public partial class TolendItemPage : ContentPage
     {
         public static string Choixdate;
+        public static DateTime localDate;
         public TolendItemPage()
         {
              InitializeComponent();
+             localDate= DateTime.Now;
         }
         
 
@@ -61,6 +63,9 @@ namespace App_ToLend.Views
         void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             Choixdate = e.NewDate.ToString();
+            localDate.
+           // DateTime localDate = e.NewDate; /* .NewDate();*/
+            //mainlabeldate.Text = DateTime.Now.ToString();// localDate.ToString();
         }
         protected override async void OnAppearing()
         {

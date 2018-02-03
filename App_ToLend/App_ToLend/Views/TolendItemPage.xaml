@@ -11,22 +11,27 @@
         <local:TLItemViewModel/>
     </ContentPage.BindingContext>
     <StackLayout Margin="20" VerticalOptions="StartAndExpand" BackgroundColor="White">
-        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-            <Image Source="ic_Person_32.png"/>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Person_32.png" HorizontalOptions="Start"/>
             <Entry Text="{Binding tolendItem.Name}"
+                   HorizontalOptions="FillAndExpand"
                    Placeholder="Saisir le nom"/>
         </StackLayout>
-        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-            <Image Source="ic_Edit_32.png"/>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Edit_32.png" HorizontalOptions="Start"/>
             <Entry Text="{Binding tolendItem.Notes}"
-               Placeholder="Saisir l'objet"/>
+                   HorizontalOptions="FillAndExpand"
+                   Placeholder="Saisir l'objet"/>
         </StackLayout>
-        <StackLayout Margin="20" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-            <Image Source="ic_Calendar_32.png"/>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Calendar_32.png" HorizontalOptions="Start"/>
             <DatePicker MinimumDate="1/1/2017"
-                    MaximumDate="1/1/2030"
-                    DateSelected="DatePicker_DateSelected"/>
+                        MaximumDate="1/1/2030"
+                        HorizontalOptions="FillAndExpand"
+                        InputTransparent="True"
+                        DateSelected="DatePicker_DateSelected"/>
         </StackLayout>
+        <Label x:Name="mainlabeldate"/>
         <Label Text="Done" />
         <Switch IsToggled="{Binding Done}" />
         <StackLayout Orientation="Horizontal">

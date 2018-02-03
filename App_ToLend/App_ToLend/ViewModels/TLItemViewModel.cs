@@ -30,9 +30,16 @@ namespace App_ToLend.ViewModels
             {
                 return new Command(async () => 
                 {
-                    tolendItem.DateSelected = App_ToLend.Views.TolendItemPage.Choixdate;
-                    await App.DB.SaveItemAsync(tolendItem);
+                    if (App_ToLend.Views.TolendItemPage.Choixdate == null)
+                    {
 
+                        tolendItem.DateSelected = DateTime.Now.ToString();
+                    }
+                    else
+                    {
+                        tolendItem.DateSelected = App_ToLend.Views.TolendItemPage.Choixdate; //App_ToLend.Views.TolendItemPage.localDate.ToString();
+                    }
+                    await App.DB.SaveItemAsync(tolendItem);
                 });
             }
         }

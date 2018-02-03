@@ -54,6 +54,7 @@ namespace App_ToLend.Views
         private async void New_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TolendItemPage());
+
         }
     }
 }

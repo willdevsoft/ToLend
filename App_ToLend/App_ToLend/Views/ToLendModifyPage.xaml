@@ -10,12 +10,22 @@
         <local:TLModifyViewModel/>
     </ContentPage.BindingContext>
     <StackLayout Margin="20" VerticalOptions="StartAndExpand" BackgroundColor="White">
-        <Entry Text="{Binding tolendItem.Name}" Placeholder="{Binding Name}"/>
-        <Entry Text="{Binding tolendItem.Notes}" Placeholder="{Binding Notes}"/>
-        <Label Text="{Binding tolendItem.DateSelected}"/>
-        <DatePicker MinimumDate="1/1/2017"
-                    MaximumDate="1/1/2030"
-                    DateSelected="DatePicker_DateSelected"/>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Person_32.png" HorizontalOptions="Start"/>
+            <Entry Text="{Binding tolendItem.Name}"
+                   HorizontalOptions="FillAndExpand"
+                   Placeholder="{Binding Name}"/>
+        </StackLayout>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Edit_32.png" HorizontalOptions="Start"/>
+            <Entry Text="{Binding tolendItem.Notes}"
+                   HorizontalOptions="FillAndExpand"
+                   Placeholder="{Binding Notes}"/>
+        </StackLayout>
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Calendar_32.png" HorizontalOptions="Start"/>
+            <Label Text="{Binding tolendItem.DateSelected}" TextColor="Gray"/>
+        </StackLayout>        
         <StackLayout Orientation="Horizontal">
             <Button
                 Image="ic_disk_save_48.png"
