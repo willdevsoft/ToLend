@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter.cs" />
     <Compile Include="Database\TolendItemDatabase.cs" />
     <Compile Include="IFileHelper.cs" />
     <Compile Include="MainPage.xaml.cs">

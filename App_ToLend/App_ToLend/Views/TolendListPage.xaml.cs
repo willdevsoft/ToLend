@@ -29,17 +29,19 @@ namespace App_ToLend.Views
             // Reset the 'resume' id, since we just want to re-start here
             ((App)App.Current).ResumeAtTodoId = -1;
             listView.ItemsSource = await App.DB.GetItemsAsync();
-
+            
         }
 
         private async Task Remove_Clicked(object sender, EventArgs e)
         {
-
-            var button = sender as Button;
-            var tolendItem=button.BindingContext as TolendItem;
-            var vm = new TLItemViewModel();
-            vm.RemoveCommand.Execute(tolendItem);
-            listView.ItemsSource = await App.DB.GetItemsAsync();
+           var result= await DisplayAlert("Alert", "Are you sure you want to delete?", "Delete","Cancel");
+            if (result)
+            { var button = sender as Button;
+                var tolendItem = button.BindingContext as TolendItem;
+                var vm = new TLItemViewModel();
+                vm.RemoveCommand.Execute(tolendItem);
+                listView.ItemsSource = await App.DB.GetItemsAsync();
+            }
         }
 
         private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -56,5 +58,7 @@ namespace App_ToLend.Views
             await Navigation.PushAsync(new TolendItemPage());
 
         }
+
+
     }
 }

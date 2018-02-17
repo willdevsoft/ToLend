@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App_ToLend.ViewModels"
-             x:Class="App_ToLend.Views.ToLendModifyPage">
+             x:Class="App_ToLend.Views.ToLendModifyPage"
+             Title="Modification">
     <ContentPage.ToolbarItems
         BackgroundColor="Blue">
     </ContentPage.ToolbarItems>
@@ -24,7 +25,12 @@
         </StackLayout>
         <StackLayout Margin="20" Orientation="Horizontal">
             <Image Source="ic_Calendar_32.png" HorizontalOptions="Start"/>
-            <Label Text="{Binding tolendItem.DateSelected}" TextColor="Gray"/>
+            <Label Text="{Binding DateSelected}" FontSize="Default" TextColor="Gray"/>
+            <DatePicker MinimumDate="1/1/2017"
+                        MaximumDate="1/1/2030"
+                        HorizontalOptions="FillAndExpand"
+                        InputTransparent="True"
+                        DateSelected="DatePicker_DateSelected"/>
         </StackLayout>        
         <StackLayout Orientation="Horizontal">
             <Button

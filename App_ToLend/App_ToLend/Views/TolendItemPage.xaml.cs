@@ -17,6 +17,7 @@ namespace App_ToLend.Views
     public partial class TolendItemPage : ContentPage
     {
         public static string Choixdate;
+        public static bool Rendered_Color;
         public static DateTime localDate;
         public TolendItemPage()
         {
@@ -28,30 +29,12 @@ namespace App_ToLend.Views
 
         async void OnSaveClicked(object sender, EventArgs e)
         {
-            //var tolendItem = (TolendItem)BindingContext;
-            //await App.DB.SaveItemAsync(tolendItem);
-            //await Navigation.PopAsync();
-            await Navigation.PushAsync(new TolendListPage());
-            //var button = sender as Button;
-            //var tolendItem = button.BindingContext as TolendItem;
-            //tolendItem.Photo = PathLabel.Text;
-            //var vm = new TLItemViewModel();
-            //vm.SaveCommand.Execute(tolendItem);
+            //await Navigation.PushAsync(new TolendListPage());
+            await DisplayAlert("Information", "Enregistrement effectué", "OK");
+            
         }
 
-        async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            //var todoItem = (TodoItem)BindingContext;
-            //await App.Database.DeleteItemAsync(todoItem);
-            //await Navigation.PopAsync();
-        }
 
-        async void OnCancelClicked(object sender, EventArgs e)
-        {
-            // await Navigation.PopAsync();
-            await Navigation.PushAsync(new TolendListPage());
-
-        }
 
         void OnSpeakClicked(object sender, EventArgs e)
         {
@@ -63,7 +46,7 @@ namespace App_ToLend.Views
         void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             Choixdate = e.NewDate.ToString();
-            localDate.
+
            // DateTime localDate = e.NewDate; /* .NewDate();*/
             //mainlabeldate.Text = DateTime.Now.ToString();// localDate.ToString();
         }
@@ -77,7 +60,9 @@ namespace App_ToLend.Views
         }
 
 
-
-       
+        private void switch1_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Rendered_Color = switch1.IsToggled;
+        }
     }
 }

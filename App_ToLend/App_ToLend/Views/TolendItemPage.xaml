@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App_ToLend.ViewModels"
              x:Class="App_ToLend.Views.TolendItemPage"
-             Title="{Binding tolendItem.Name}">
+             Title="Nouveau">
     <ContentPage.ToolbarItems
         BackgroundColor="Blue">
     </ContentPage.ToolbarItems>
@@ -31,9 +31,16 @@
                         InputTransparent="True"
                         DateSelected="DatePicker_DateSelected"/>
         </StackLayout>
-        <Label x:Name="mainlabeldate"/>
-        <Label Text="Done" />
-        <Switch IsToggled="{Binding Done}" />
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Image Source="ic_Edit_32.png" HorizontalOptions="Start"/>
+            <Label Text="Rendered" />
+            <Switch x:Name="switch1" 
+                    PropertyChanged="switch1_PropertyChanged"
+                    IsToggled="{Binding Rendered}" />
+        </StackLayout>
+        <!-- <Label x:Name="mainlabeldate"/> --> 
+        
+
         <StackLayout Orientation="Horizontal">
             <Button 
                 Image="ic_disk_save_48.png"
@@ -45,15 +52,7 @@
                 TextColor="White"
                 FontSize="Default"
                 HorizontalOptions="FillAndExpand"/>
-            <Button
-                Image="ic_Cancel_48.png"
-                BackgroundColor="Transparent"
-                BorderRadius="15" 
-                Clicked="OnCancelClicked"
-                FontAttributes="Bold"
-                TextColor="White"
-                FontSize="Default"
-                HorizontalOptions="FillAndExpand"/>
+
         </StackLayout>
     </StackLayout>
 </ContentPage>

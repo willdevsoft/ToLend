@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App_ToLend"
              x:Class="App_ToLend.Views.TolendListPage"
              Title="To Lend"
              Icon="ic_format_align_justify_black_24dp.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringToColorConverter x:Key="cnvInvert"></local:StringToColorConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <!--Affichage d'un menu accessible depuis la toolbar-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="ic_format_list_bulleted_black_24dp.png"
@@ -24,7 +30,9 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Orientation="Horizontal">
-                            <Grid BackgroundColor="Purple"
+                            <!--"Purple""{Binding Rendered_anim,Converter={StaticResource StringToColorConverter}}" -->
+                            <Grid x:Name="status1" 
+                                BackgroundColor="{Binding Rendered_anim,Converter={StaticResource cnvInvert}}"
                                   Padding="10" >
                             </Grid>
                             <StackLayout Margin="15,0,0,0" Orientation="Vertical">

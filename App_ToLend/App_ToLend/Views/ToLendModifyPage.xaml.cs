@@ -35,7 +35,8 @@ namespace App_ToLend.Views
             var button = sender as Button;
             var tolendItem = button.BindingContext as TolendItem;
             vm2.ModifyCommand.Execute(tolendItem);
-            await Navigation.PushAsync(new TolendListPage());
+            await Navigation.PopAsync();
+            //await Navigation.PushAsync(new TolendListPage());
         }
 
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
@@ -45,8 +46,8 @@ namespace App_ToLend.Views
 
         async void Button_Cancel(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TolendListPage());
-
+            //await Navigation.PushAsync(new TolendListPage());
+            await Navigation.PopAsync();
 
         }
     }

@@ -25,7 +25,7 @@ namespace App_ToLend.Database
 
         public Task<List<TolendItem>> GetItemsNotDoneAsync()
         {
-            return database.QueryAsync<TolendItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return database.QueryAsync<TolendItem>("SELECT * FROM [TodoItem] WHERE [Rendered] = 0");
         }
 
         public Task<TolendItem> GetItemAsync(int id)
